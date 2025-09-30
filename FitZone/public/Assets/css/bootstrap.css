@@ -4031,7 +4031,28 @@ textarea.form-control-lg {
 .navbar-brand:hover, .navbar-brand:focus {
   color: var(--bs-navbar-brand-hover-color);
 }
-
+.titre-Accueil{
+  font-family: 'Arial', cursive;
+  font-size: 2.5rem;
+  color: #000000;
+  text-shadow: 0 5px 4px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin-top: 10px;
+}
+.bloc-accueil {
+  background-color: #D98452;  
+  color: #fff;  
+  width: 70%;  
+  height: 500px; 
+  margin: 50px auto;
+  border-radius: 40px; 
+  display: flex;              
+  justify-content: center;       
+  align-items: center;          
+  font-size: 24px;          
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 .navbar-nav {
   --bs-nav-link-padding-x: 0;
   --bs-nav-link-padding-y: 0.5rem;
