@@ -19,7 +19,7 @@ final class ConnexionController extends AbstractController
             'controller_name' => 'ConnexionController',
         ]);
     }
-    #[Route('/connexion/connect', name: 'app_connexion_connect')]
+    #[Route('/connexion/connect', name: 'app_connect')]
     public function connect(Request $request, EntityManagerInterface $em): Response
     {
         if ($request->isMethod('POST')) {

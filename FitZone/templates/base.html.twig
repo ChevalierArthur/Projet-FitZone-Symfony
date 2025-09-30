@@ -25,17 +25,17 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Presentation</a>
+          <a class="nav-link" href="{{path('app_presentation')}}">Presentation</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Prestations</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Avis</a>
+          <a class="nav-link" href="{{path('app_connexion')}}">Avis</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <button class="btn btn-connexion my-2 my-sm-0" href="#">Connexion</button>
+      <form class="d-flex" action="{{path('app_connexion')}}">
+        <button type="submit" class="btn btn-connexion my-2 my-sm-0">Connexion</button>
       </form>
     </div>
   </div>
