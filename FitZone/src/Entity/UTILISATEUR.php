@@ -173,6 +173,7 @@ class UTILISATEUR
         return $this;
     }
 
+
     /**
      * @return Collection<int, CONTACT>
      */
