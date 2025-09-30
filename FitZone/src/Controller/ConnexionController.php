@@ -31,12 +31,8 @@ final class ConnexionController extends AbstractController
                 'controller_name' => 'ConnexionController',
                 ]);
             }
-            $nb = 0;
-            $trouve = false;
-            $mdpr = "";
-            $role = "";
-            $mdpr = $em->getRepository(UTILISATEUR::class)->findOneBy(['Identifiant' => $id]);
             
+            $mdpr = $em->getRepository(UTILISATEUR::class)->findOneBy(['Identifiant' => $id]);
             if($mdpr == ""){
                 echo "<script>alert('login non trouvé');</script>";
                 return $this->render('connexion/index.html.twig', [
@@ -44,9 +40,12 @@ final class ConnexionController extends AbstractController
                 ]);
             }
             else if($mdp == $mdpr->getMotDePasse()){
-                session_start();
                 $_SESSION['id'] = $id;
-                $_SESSION['role'] = $role;
+                if($mdpr->isEstAdmin() == true){
+                $_SESSION['role'] = "Admin";}
+                else{
+                    $_SESSION['role'] = "Utilisateur";
+                }
                 echo "<script>alert('".$_SESSION['id']."');</script>";
                 return $this->render('accueil/index.html.twig', [
                 'controller_name' => 'ConnexionController',
