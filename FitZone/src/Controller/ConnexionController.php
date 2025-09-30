@@ -46,10 +46,8 @@ final class ConnexionController extends AbstractController
                 else{
                     $_SESSION['role'] = "Utilisateur";
                 }
-                echo "<script>alert('".$_SESSION['id']."');</script>";
-                return $this->render('accueil/index.html.twig', [
-                'controller_name' => 'ConnexionController',
-                ]);
+                echo "<script>alert('Bonjour ".$_SESSION['id']."');</script>";
+                return $this->redirectToRoute('app_accueil');
             }
             else{
                 echo "<script>alert('Mot de passe non trouvé');</script>";
