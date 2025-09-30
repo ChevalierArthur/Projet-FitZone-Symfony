@@ -12128,3 +12128,11 @@ textarea.form-control-lg {
 .table-light {
   --bs-table-color: #333;
 }
+.formulaire{
+  background-color: #D98452;
+  p{
+    text-align: center ;
+    font-weight:bold ;
+  }
+  
+}
