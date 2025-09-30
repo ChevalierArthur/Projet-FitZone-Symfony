@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ConnexionController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+<h1>Connexion</h1>
+<div class="formulaire">
+<form method="POST" action="/connexion/connect">
+    <p>Identifiant :</p>
+    <input type="text" id="id" name="id">
+    <p>Mot de passe :</p>
+    <input type="password" id"mdp" name="mdp"><br>
+    <input type="submit" value="CONNEXION">
+</form>
+<form method="POST" action="/inscription">
+    <input type="submit" value="INSCRIPTION">
+</form>
+</div>
+{% endblock %}
