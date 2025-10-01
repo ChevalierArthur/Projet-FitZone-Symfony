@@ -44,21 +44,17 @@ final class ConnexionController extends AbstractController
                 if($mdpr->isEstAdmin() == true){
                 $_SESSION['role'] = "Admin";}
                 else{
-                    $_SESSION['role'] = "Utilisateur";
+                $_SESSION['role'] = "Utilisateur";
                 }
                 echo "<script>alert('Bonjour ".$_SESSION['id']."');</script>";
                 return $this->redirectToRoute('app_accueil');
             }
             else{
                 echo "<script>alert('Mot de passe non trouvé');</script>";
-                return $this->render('connexion/index.html.twig', [
-                'controller_name' => 'ConnexionController',
-                ]);
+                return $this->redirectToRoute('app_connexion');
             }           
 
         }
-        return $this->render('connexion/index.html.twig', [
-            'controller_name' => 'ConnexionController',
-        ]);
+        return $this->redirectToRoute('app_connexion');
     }
 }

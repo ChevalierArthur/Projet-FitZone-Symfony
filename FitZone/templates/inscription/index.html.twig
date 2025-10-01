@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ConnexionController!{% endblock %}
+{% block title %}Hello InscriptionController!{% endblock %}
 
 {% block body %}
 <style>
@@ -8,18 +8,23 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 <div class="titre-Accueil">
-<h1>Connexion</h1>
+<h1>Inscription</h1>
 </div>
 <section class="formulaire">
-<form method="POST" action="/connexion/connect">
+<form method="POST" action="/inscription/ins">
+    <p>Nom :</p>
+    <input type="text" id="nom" name="nom">
+    <p>Prénom :</p>
+    <input type="text" id="prenom" name="prenom">
+    <p>E-mail :</p>
+    <input type="text" id="mail" name="mail">
+    <p>Téléphone :</p>
+    <input type="number" id="tel" name="tel">
     <p>Identifiant :</p>
     <input type="text" id="id" name="id">
     <p>Mot de passe :</p>
     <input type="password" id"mdp" name="mdp"><br>
-    <input type="submit" value="CONNEXION">
-</form>
-<form method="POST" action="/inscription">
-    <input type="submit" value="INSCRIPTION">
+    <input type="submit" value="S'inscrire">
 </form>
 </section>
 {% endblock %}
