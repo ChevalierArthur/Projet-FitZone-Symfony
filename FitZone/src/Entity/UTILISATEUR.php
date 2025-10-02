@@ -6,9 +6,11 @@ use App\Repository\UTILISATEURRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 #[ORM\Entity(repositoryClass: UTILISATEURRepository::class)]
-class UTILISATEUR
+class UTILISATEUR implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -203,4 +205,27 @@ class UTILISATEUR
 
         return $this;
     }
+        public function getUserIdentifier(): string
+    {
+        return $this->Identifiant;
+    }
+        public function getRoles(): array
+    {
+        $roles = ['ROLE_USER'];
+        if ($this->EstAdmin) {
+            $roles[] = 'ROLE_ADMIN';
+        }
+        return $roles;
+    }
+        public function getPassword(): string
+    {
+        return $this->MotDePasse;
+    }
+        public function eraseCredentials(): void
+    {
+        
+    }
 }
+
+
+
