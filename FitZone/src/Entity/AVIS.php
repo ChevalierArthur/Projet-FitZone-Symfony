@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Dom\Text;
 
 #[ORM\Entity(repositoryClass: AVISRepository::class)]
+#[ORM\Table(name: "AVIS")]
 class AVIS
 {
     #[ORM\Id]
