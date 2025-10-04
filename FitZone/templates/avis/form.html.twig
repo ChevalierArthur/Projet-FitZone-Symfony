@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AvisController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+<div class="titre-Accueil">
+<h1>Poster un avis</h1>
+</div>
+<section class="formulaire">
+<form method="POST" action="/avis/poster">
+    <p>Commentaire :</p>
+    <textarea id="commentaire" name="commentaire"></textarea>
+    <input type="submit" value="S'inscrire">
+</form>
+</section>
+{% endblock %}
