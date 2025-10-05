@@ -10,12 +10,16 @@
 <div class="titre-Accueil">
 <h1>Avis</h1>
 </div>
+{% if app.session.get('role') %}
+{% if app.session.get('role') == "Utilisateur" %}
 <form method="POST" action="/avis/form">
     <input type="submit" value="Poster un avis">
 </form>
+{% endif %}
+{% endif %}
 {% for avs in avis %}
 <section class="avis">
-    <p>{{avs.idUtilisateurAvis.identifiant}}</p>
+    <p class="nom">{{avs.idUtilisateurAvis.identifiant}}</p>
     <p>{{avs.messageavis}}</p>
 </section>
 {% endfor %}

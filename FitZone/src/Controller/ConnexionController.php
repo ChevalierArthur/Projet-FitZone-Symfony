@@ -40,14 +40,18 @@ final class ConnexionController extends AbstractController
                 ]);
             }
             else if($mdp == $mdpr->getMotDePasse()){
-                $_SESSION['id'] = $id;
+                $session = $request->getSession();
+                $session->set('id', $id);
                 if($mdpr->isEstAdmin() == true){
-                $_SESSION['role'] = "Admin";}
+                $session->set('role', "Admin");}
                 else{
-                $_SESSION['role'] = "Utilisateur";
+                $session->set('role', "Utilisateur");
                 }
                 echo "<script>alert('Bonjour ".$_SESSION['id']."');</script>";
-                return $this->redirectToRoute('app_accueil');
+                return $this->redirectToRoute('app_accueil', [
+                    'role' => $session->get('role'), 
+                    'id' => $session->get('id')
+                ]);
             }
             else{
                 echo "<script>alert('Mot de passe non trouvé');</script>";

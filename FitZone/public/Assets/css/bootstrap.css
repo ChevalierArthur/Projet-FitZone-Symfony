@@ -12135,6 +12135,18 @@ textarea.form-control-lg {
   padding: 20px;
   text-align: center;
   border-radius: 20px;
-  margin: 50px auto; /* centre horizontalement */
+  margin: 50px auto;
+}
+.avis{
+  background-color: #D98452;
+  display: block;
+  width: 400px;
+  padding: 20px;
+  .nom{
+    text-align: left;
+  }
+  text-align: center;
+  border-radius: 20px;
+  margin: 50px auto;
 }
 

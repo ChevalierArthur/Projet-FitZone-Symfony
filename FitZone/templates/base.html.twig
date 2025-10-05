@@ -33,6 +33,16 @@
         <li class="nav-item">
           <a class="nav-link" href="{{path('app_avis')}}">Avis</a>
         </li>
+        {% if app.session.get('id') and app.session.get('role') == "Utilisateur" %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{path('app_messagerie')}}">Contact</a>
+        </li>
+        {% endif %}
+        {% if app.session.get('id') and app.session.get('role') == "Admin" %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{path('app_messagerie_message')}}">Message</a>
+        </li>
+        {% endif %}
       </ul>
       {% if not app.user %}
       <form class="d-flex" action="{{path('app_login')}}">
