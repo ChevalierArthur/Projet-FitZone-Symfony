@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PresentationController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+<form class="presentation" method="POST" action="/presentation/modifier">
+<div class="image">
+<img src={{presentation.photo}} alt="une image">
+</div>
+<div class="introduction">
+<p><textarea id="intro" name="intro">{{presentation.introduction}}</textarea></p>
+</div>
+<div class="text">
+<p><textarea id="text" name="text">{{presentation.texte}}</textarea></p>
+</div>
+<input type="submit" value="Modifier">
+</div>
+
+{% endblock %}
