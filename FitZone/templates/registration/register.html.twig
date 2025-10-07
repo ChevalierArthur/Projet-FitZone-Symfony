@@ -4,15 +4,40 @@
 {% block title %}Inscription{% endblock %}
 
 {% block body %}
-<h1>Inscription</h1>
+<div class="formulaire">
+    <h1 class="h3 mb-3 font-weight-normal">Inscription</h1>
+    
+    {{ form_start(registrationForm) }}
 
-{{ form_start(registrationForm) }}
-    {{ form_row(registrationForm.Nom) }}
-    {{ form_row(registrationForm.Prenom) }}
-    {{ form_row(registrationForm.Email) }}
-    {{ form_row(registrationForm.NumTel) }}
-    {{ form_row(registrationForm.Identifiant) }}
-    {{ form_row(registrationForm.MotDePasse) }}
-    <button class="btn">S'inscrire</button>
-{{ form_end(registrationForm) }}
+            {{ form_label(registrationForm.Nom, 'Nom') }}
+            {{ form_widget(registrationForm.Nom, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(registrationForm.Nom) }}
+
+        
+            {{ form_label(registrationForm.Prenom, 'Prénom') }}
+            {{ form_widget(registrationForm.Prenom, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(registrationForm.Prenom) }}
+
+        
+            {{ form_label(registrationForm.Email, 'Adresse email') }}
+            {{ form_widget(registrationForm.Email, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(registrationForm.Email) }}
+
+            {{ form_label(registrationForm.NumTel, 'Numéro de téléphone') }}
+            {{ form_widget(registrationForm.NumTel, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(registrationForm.NumTel) }}
+
+            {{ form_label(registrationForm.Identifiant, 'Identifiant') }}
+            {{ form_widget(registrationForm.Identifiant, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(registrationForm.Identifiant) }}
+
+            {{ form_label(registrationForm.MotDePasse, 'Mot de passe') }}
+            {{ form_widget(registrationForm.MotDePasse, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(registrationForm.MotDePasse) }}
+        <br>
+
+        <button type="submit" class="btn btn-primary">S'inscrire</button>
+    
+    {{ form_end(registrationForm) }}
+</div>
 {% endblock %}
