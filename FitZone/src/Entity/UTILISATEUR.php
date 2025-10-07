@@ -38,7 +38,7 @@ class UTILISATEUR implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $MotDePasse = null;
 
     #[ORM\Column]
-    private ?bool $EstAdmin = null;
+    private ?bool $EstAdmin = false;
 
     /**
      * @var Collection<int, Avis>
