@@ -12140,7 +12140,7 @@ textarea.form-control-lg {
 .avis{
   background-color: #D98452;
   display: block;
-  width: 400px;
+  max-width: 500px;
   padding: 20px;
   .nom{
     text-align: left;
@@ -12150,3 +12150,28 @@ textarea.form-control-lg {
   margin: 50px auto;
 }
 
+.presentation{
+  display: grid;
+  img{
+    width: 40px;
+    height: 40px;
+  }
+  .image{
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .introduction{
+    grid-column:3;
+    grid-row:1;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #D98452;
+  }
+  .texte{
+    grid-column:1;
+    grid-row:2;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #D98452;
+  }
+}
