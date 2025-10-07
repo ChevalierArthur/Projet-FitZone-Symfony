@@ -30,8 +30,10 @@ final class AvisController extends AbstractController
     public function poster(Request $request, EntityManagerInterface $em): Response
     { 
         $commentaire = $request->request->get('commentaire');
-        if($_SESSION['id'] && $commentaire){
-        $id = $em->getRepository(UTILISATEUR::class)->findOneBy(['Identifiant' => $_SESSION['id']]);
+        $user = $this->getUser();
+        $identifiant = $user->getUserIdentifier();
+        if($identifiant && $commentaire){
+        $id = $em->getRepository(UTILISATEUR::class)->findOneBy(['Identifiant' =>$identifiant]);
         $avis = new avis();
         $avis->setIdUtilisateurAvis($id);
         $avis->setMessageavis($commentaire);
