@@ -33,9 +33,11 @@ final class PresentationController extends AbstractController
         echo $request->request->get('intro');
         $intro = $request->request->get('intro');
         $text = $request->request->get('text');
+        $image = $request->request->get('image');
         $presentation = $em->getRepository(PRESENTATION::class)->findOneBy(['id' => 1]);
         $presentation->setIntroduction($intro);
         $presentation->setTexte($text);
+        $presentation->setPhoto($image);
         $em->persist($presentation); //$em->remove($article) //persist
         $em->flush();
         return $this->redirectToRoute('app_accueil');

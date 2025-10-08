@@ -12153,8 +12153,8 @@ textarea.form-control-lg {
 .presentation{
   display: grid;
   img{
-    width: 40px;
-    height: 40px;
+    width: 100px;
+    height: 100px;
   }
   .image{
     grid-column: 1;

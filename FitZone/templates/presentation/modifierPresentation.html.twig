@@ -9,7 +9,7 @@
 </style>
 <form class="presentation" method="POST" action="/presentation/modifier">
 <div class="image">
-<img src={{presentation.photo}} alt="une image">
+<p><textarea id="image" name="image">{{presentation.photo}}</textarea></p>
 </div>
 <div class="introduction">
 <p><textarea id="intro" name="intro">{{presentation.introduction}}</textarea></p>
