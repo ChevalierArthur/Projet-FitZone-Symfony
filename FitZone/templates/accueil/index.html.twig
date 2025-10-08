@@ -7,12 +7,12 @@
 <div class="titre-Accueil">
     <h1 >Bienvenue sur FitZone !</h1>
 </div>
-<div class="bloc-accueil">
+<div class="bloc-accueil" style="text-align:center;">
 {{informations.getTextAccueil()}}
 </div>
 {% if app.user and is_granted('ROLE_ADMIN') %}
 <div style="display: flex; justify-content: center;">
-    <form class="d-flex" action="{{path('app_register')}}">
+    <form class="d-flex" action="{{path('app_modifaccueil')}}">
     <button type="submit" class="btn btn-connexion my-2 my-sm-0">modifier</button></form></div>
 {% endif %}
 {% endblock %}

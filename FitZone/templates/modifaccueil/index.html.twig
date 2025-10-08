@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    {% if app.user and is_granted('ROLE_ADMIN') %}
+<div class="titre-Accueil">
+    <h1>Bienvenue sur FitZone !</h1>
+</div>
+
+<div class="bloc-accueil">
+        <form method="post" action="{{ path('app_modifier_texte') }}">
+            <textarea name="text_accueil" class="form-control" rows="17" placeholder="Entrez le texte d'accueil ici..." style="width: 60vw;">
+            {{ informations.textAccueil ?? '' }}</textarea>
+            <div style="display: flex; justify-content: center; margin-top: 10px;">
+                <button type="submit" class="btn btn-connexion my-2 my-sm-0">💾 Sauvegarder</button>
+            </div>
+        </form>
+    {% endif %}
+</div>
+
+{% endblock %}
