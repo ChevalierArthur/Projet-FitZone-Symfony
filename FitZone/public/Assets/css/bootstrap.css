@@ -2127,6 +2127,7 @@ progress {
 .form-control {
   display: block;
   width: 100%;
+ margin-top: 10px;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
@@ -2140,6 +2141,7 @@ progress {
   border: var(--bs-border-width) solid var(--bs-border-color);
   border-radius: var(--bs-border-radius);
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  
 }
 @media (prefers-reduced-motion: reduce) {
   .form-control {
@@ -12177,4 +12179,31 @@ textarea.form-control-lg {
 }
 .messagerie{
 
+}
+.prestations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding: 1rem;
+  max-width: 64rem;
+  margin: 0 auto 2rem;
+  justify-content: center;
+}
+.prestation {
+  width: 16rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: #F2B999;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+  transition: transform 0.12s ease;
+  flex-shrink: 0;
+  padding: 1.5rem 1rem;
+  box-sizing: border-box;
+}
+.prestation:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.16);
 }

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter une Prestation{% endblock %}
+
+{% block body %}
+<div class="formulaire">
+    <h1 class="h3 mb-3 font-weight-normal">Ajouter une Prestation</h1>
+
+    <form method="post" class="form-simple" action="{{ path('app_prestation_ajouter') }}">
+
+            <input type="text" name="titre" placeholder="Titre de la prestation" class="form-control">
+
+            <textarea name="description" placeholder="Description" class="form-control"></textarea>
+
+            <input type="number" name="prix" placeholder="Prix (€)" step="0.01" min="0" class="form-control">
+
+            <button type="submit" class="btn btn-primary btn-submit" style="margin-top: 10px;">Ajouter la prestation</button>
+            <div style="margin-top: 5px;">
+            <a href="{{ path('app_prestation') }}" class="btn btn-secondary btn-cancel">Annuler</a></div>
+        </div>
+    </form>
+</div>
+{% endblock %}

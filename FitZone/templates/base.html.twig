@@ -28,7 +28,7 @@
           <a class="nav-link" {% if app.user and is_granted('ROLE_ADMIN') %}href="{{path('app_presentation_modification')}}"{% else %}href="{{path('app_presentation')}}"{% endif %}>Presentation</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Prestations</a>
+          <a class="nav-link" href="{{path('app_prestation')}}">Prestations</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{path('app_avis')}}">Avis</a>
