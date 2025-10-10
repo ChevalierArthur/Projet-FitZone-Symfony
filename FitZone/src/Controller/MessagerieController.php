@@ -23,14 +23,15 @@ final class MessagerieController extends AbstractController
     #[Route('/messagerie/envoie', name: 'app_messagerie_envoie')]
     public function envoie(Request $request, EntityManagerInterface $em, SessionInterface $session): Response
     {
-        $present = $session->get('id');
-        if($present){
+        $user = $this->getUser();
+        $identifiant = $user->getUserIdentifier();
+        if($identifiant){
             $contact = new Contact();
             $message= $request->request->get('message');
             $contact->setMessageContact($message);
             $objet= $request->request->get('objet');
             $contact->setObjetContact($objet);
-            $idUtili = $em->getRepository(UTILISATEUR::class)->findOneBy(['Identifiant' => $session->get('id')]);
+            $idUtili = $em->getRepository(UTILISATEUR::class)->findOneBy(['Identifiant' => $identifiant]);
             $contact->setIdutilisateurcontact($idUtili);
             $em->persist($contact); //$em->remove($article) //persist
             $em->flush();
