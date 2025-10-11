@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Presentation{% endblock %}
+
+{% block body %}
+</style>
+<div class="titre-Accueil">
+<h1>Présentation</h1>
+</div>
+{% if app.user and is_granted('ROLE_ADMIN') %}
+<form class="presentation" method="POST" action="/presentation/modifier">
+<div class="imag">
+<p><textarea id="image" name="image">{{presentation.photo}}</textarea></p>
+</div>
+<div class="introduction">
+<p><textarea id="intro" name="intro">{{presentation.introduction}}</textarea></p>
+</div>
+<div class="text"><br>
+<p><textarea id="text" name="text">{{presentation.texte}}</textarea></p>
+</div>
+<input type="submit" value="Modifier" class="inputs">
+</div>
+{% endif %}
+{% endblock %}

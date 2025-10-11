@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Dom\Text;
 
 #[ORM\Entity(repositoryClass: AVISRepository::class)]
+#[ORM\Table(name: "AVIS")]
 class AVIS
 {
     #[ORM\Id]
@@ -15,7 +16,7 @@ class AVIS
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?Text $Messageavis = null;
+    private ?string $Messageavis = null;
 
     #[ORM\ManyToOne(inversedBy: 'avis')]
     #[ORM\JoinColumn(nullable: false)]
@@ -26,12 +27,12 @@ class AVIS
         return $this->id;
     }
 
-    public function getMessageavis(): ?Text
+    public function getMessageavis(): ?string
     {
         return $this->Messageavis;
     }
 
-    public function setMessageavis(Text $Messageavis): static
+    public function setMessageavis(string $Messageavis): static
     {
         $this->Messageavis = $Messageavis;
 
