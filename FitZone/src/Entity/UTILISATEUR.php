@@ -6,9 +6,13 @@ use App\Repository\UTILISATEURRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 #[ORM\Entity(repositoryClass: UTILISATEURRepository::class)]
-class UTILISATEUR
+#[UniqueEntity(fields: ['Identifiant'], message: 'There is already an account with this Identifiant')]
+class UTILISATEUR implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -34,7 +38,7 @@ class UTILISATEUR
     private ?string $MotDePasse = null;
 
     #[ORM\Column]
-    private ?bool $EstAdmin = null;
+    private ?bool $EstAdmin = false;
 
     /**
      * @var Collection<int, Avis>
@@ -173,6 +177,7 @@ class UTILISATEUR
         return $this;
     }
 
+
     /**
      * @return Collection<int, CONTACT>
      */
@@ -202,4 +207,27 @@ class UTILISATEUR
 
         return $this;
     }
+        public function getUserIdentifier(): string
+    {
+        return $this->Identifiant;
+    }
+        public function getRoles(): array
+    {
+        $roles = ['ROLE_USER'];
+        if ($this->EstAdmin) {
+            $roles[] = 'ROLE_ADMIN';
+        }
+        return $roles;
+    }
+        public function getPassword(): string
+    {
+        return $this->MotDePasse;
+    }
+        public function eraseCredentials(): void
+    {
+        
+    }
 }
+
+
+

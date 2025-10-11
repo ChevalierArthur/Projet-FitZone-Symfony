@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Prestations{% endblock %}
+
+{% block body %}
+
+<div class="titre-Accueil">
+    <h1 >Nos Prestations</h1>
+</div>
+<div class="prestations">
+{% for prestation in prestations %}
+<div class="prestation" style="text-align:center;">
+    <h2>{{ prestation.titrePresta }}</h2>
+    <p>{{ prestation.descriptionPresta }}</p>
+    <p>Prix: {{ prestation.prix }} €</p>
+    <hr>
+    </div>
+{% else %}
+<div class="bloc-accueil" style="text-align:center;">
+    <p>Aucune prestation disponible pour le moment.</p>
+    </div>
+{% endfor %}
+
+</div>
+{% if app.user and is_granted('ROLE_ADMIN') %}
+<div style="display: flex; justify-content: center;">
+    <form class="d-flex" action="{{path('app_prestation_modifier')}}">
+    <button type="submit" class="btn btn-connexion my-2 my-sm-0">modifier</button></form></div>
+{% endif %}
+{% endblock %}
