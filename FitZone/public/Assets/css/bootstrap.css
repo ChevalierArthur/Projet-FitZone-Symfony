@@ -12142,43 +12142,74 @@ textarea.form-control-lg {
 .avis{
   background-color: #D98452;
   display: block;
-  max-width: 500px;
+  margin : 100px;
   padding: 20px;
   .nom{
     text-align: left;
   }
   text-align: center;
   border-radius: 20px;
-  margin: 50px auto;
+}
+.posterAvis{
+  display: flex;
+  justify-content: center; /* centre horizontalement */
 }
 
-.presentation{
+.presentation {
   display: grid;
-  img{
-    width: 100px;
-    height: 100px;
-  }
-  .image{
-    grid-column: 1;
-    grid-row: 1;
-  }
-  .introduction{
-    grid-column:3;
-    grid-row:1;
-    text-align: center;
-    border-radius: 20px;
-    background-color: #D98452;
-  }
-  .texte{
-    grid-column:1;
-    grid-row:2;
-    text-align: center;
-    border-radius: 20px;
-    background-color: #D98452;
-  }
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: 300px 50px 40%;
+  margin-top: 50px;
 }
-.messagerie{
 
+.presentation img {
+  grid-column: 1 / span 1;
+  border-radius: 20px;
+  margin-left: 50px;
+  height: 300px;
+  width: 400px;
+}
+
+.presentation .introduction {
+  text-align: center;
+  border-radius: 20px;
+  background-color: #D98452;
+  grid-column: 3 / span 3;
+  margin-right: 50px;
+  padding: 20px;
+}
+
+.presentation .text {
+  text-align: center;
+  background-color: #D98452;
+  border-radius: 20px;
+  grid-column: 1 / span 5;
+  grid-row: 3 / span 1;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.presentation .inputs {
+  grid-column: 3;
+  grid-row : 4;
+  margin: 10px;
+}
+.message{
+  background-color: #D98452;
+  display: block;
+  margin : 100px;
+  padding: 20px;
+  .pseudo{
+    float: left;
+    margin-bottom: 0px;
+  }
+  .numero{
+    float: right;
+  }
+  .email{
+    text-align: left;
+  }
+  text-align: center;
+  border-radius: 20px;
 }
 .prestations {
   display: flex;
@@ -12207,3 +12238,8 @@ textarea.form-control-lg {
   transform: translateY(-4px);
   box-shadow: 0 16px 32px rgba(0,0,0,0.16);
 }
+p{
+  word-wrap: break-word;     
+  overflow-wrap: break-word;
+}
+

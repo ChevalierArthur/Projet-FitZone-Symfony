@@ -9,13 +9,15 @@
 </style>
 <div class="titre-Accueil">
 <h1>Avis</h1>
-
+</div>
 {% if app.user and is_granted('ROLE_USER') and not is_granted('ROLE_ADMIN') %}
+<div class='posterAvis'>
 <form method="POST" action="/avis/form">
     <input type="submit" value="Poster un avis">
 </form>
-{% endif %}
 </div>
+{% endif %}
+
 {% for avs in avis %}
 <section class="avis">
     <p class="nom">{{avs.idUtilisateurAvis.identifiant}}</p>

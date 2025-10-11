@@ -8,11 +8,12 @@
 </div>
 {% for contac in contact %}
 <section class="message">
-    <p>{{contac.idUtilisateurcontact.identifiant}}</p>
-    <p class="numero">{{contac.idUtilisateurcontact.numTel}}</p>
-    <p>{{contac.idUtilisateurcontact.email}}</p>
-    <p>{{contac.messageContact}}</p>
+    <p class="pseudo">{{contac.idUtilisateurcontact.identifiant}}</p>
+    <p class="numero">{{contac.idUtilisateurcontact.numTel}}</p><br>
+    <p class="email">{{contac.idUtilisateurcontact.email}}</p>
     <p>{{contac.objetContact}}</p>
+    <p>{{contac.messageContact}}</p>
+    
 </section>
 {% endfor %}
 {% endblock %}

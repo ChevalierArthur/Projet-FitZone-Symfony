@@ -3,16 +3,25 @@
 {% block title %}Presentation{% endblock %}
 
 {% block body %}
+</style>
+<div class="titre-Accueil">
+<h1>Présentation</h1>
+</div>
+{% if app.user and is_granted('ROLE_ADMIN') %}
+<div class='posterAvis'>
+<form method="POST" action="/presentation/modification">
+    <input type="submit" value="Modifier">
+</form>
+{% endif %}
+</div>
 <div class="presentation">
-<div class="image">
+<div class="imag">
 <img src={{presentation.photo}} alt="une image">
 </div>
 <div class="introduction">
 <p>{{presentation.introduction}}</p>
 </div>
-<div class="text">
+<div class="text"><br>
 <p>{{presentation.texte}}</p>
-</div>
-</div>
-
+</div></div>
 {% endblock %}
