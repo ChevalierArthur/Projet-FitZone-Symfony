@@ -27,5 +27,5 @@
 
 1. **Cloner le repository**
 ```bash
-git clone https://github.com/[votre-compte]/fitzone-symfony.git
+git clone https://github.com/ChevalierArthur/Projet-FitZone-Symfony.git
 cd fitzone-symfony
