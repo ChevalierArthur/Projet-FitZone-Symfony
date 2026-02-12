@@ -4,16 +4,14 @@
 ### Entités principales
 
 1. **User** : Membres/administrateurs
-   - email, password, roles, createdAt, etc.
 
 2. **Prestation** : Services proposés
-   - titre, description, prix, categorie, image, createdAt
-
+   
 3. **Avis** : Commentaires clients
-   - contenu, note, statut (validé/en attente), auteur, createdAt
+   
 
 4. **Contact** : Messages reçus
-   - nom, email, sujet, message, lu, createdAt
+
 
 ## 🚀 Installation
 
